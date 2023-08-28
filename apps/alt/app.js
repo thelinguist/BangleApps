@@ -1,4 +1,4 @@
-Bangle.setBarometerPower(true, "altimeter");
+Bangle.setBarometerPower(true, "alt");
 
 g.clear(1);
 Bangle.loadWidgets();
