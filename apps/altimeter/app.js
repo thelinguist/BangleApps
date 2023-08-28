@@ -9,6 +9,7 @@ var y = R.y + R.h/2;
 var MEDIANLENGTH = 20;
 var avr = [], median;
 var value = 0;
+const M_TO_FT = 3.28084;
 
 function getStandardPressure(altitude) {
   const P0 = 1013.25; // standard pressure at sea level in hPa
@@ -45,7 +46,7 @@ Bangle.on('pressure', function(e) {
     sea = convertToSeaLevelPressure(e.pressure, value-zero);
     t = sea.toFixed(1) + " " + e.temperature.toFixed(1);
     if (0) {
-      print("alt raw:", value.toFixed(1));
+      print("alt raw:", (value * M_TO_FT).toFixed(1));
       print("temperature:", e.temperature);
       print("pressure:", e.pressure);
       print("sea pressure:", sea);
