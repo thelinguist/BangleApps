@@ -52,7 +52,7 @@ Bangle.on('pressure', function(e) {
       print("sea pressure:", sea);
       print("std pressure:", getStandardPressure(value-zero));
     }
-    g.setFont("Vector",25).setFontAlign(-1,0).drawString(t,
+    g.setFont("Vector",25).setFontAlign(-1,0).drawString(t * M_TO_FT,
                                                         10, R.y+R.h - 35);
   }
 });
@@ -61,7 +61,7 @@ print(g.getFonts());
 g.reset();
 g.setFont("Vector:15");
 g.setFontAlign(0,0);
-g.drawString(/*LANG*/"ALTITUDE (m)", g.getWidth()/2, y-40);
+g.drawString(/*LANG*/"ALTITUDE (ft)", g.getWidth()/2, y-40);
 g.drawString(/*LANG*/"SEA L (hPa) TEMP (C)", g.getWidth()/2, y+62);
 g.flip();
 g.setFont("6x8").setFontAlign(0,0,3).drawString(/*LANG*/"ZERO", g.getWidth()-5, g.getHeight()/2);
