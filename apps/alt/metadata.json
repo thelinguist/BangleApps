@@ -1,6 +1,6 @@
 { "id": "alt",
   "name": "Alt-Altimeter",
-  "version":"0.01",
+  "version":"0.02",
   "description": "Simple altimeter in FT that can display height changed using Bangle.js 2's built in pressure sensor.",
   "icon": "app.png",
   "tags": "tool,outdoors",

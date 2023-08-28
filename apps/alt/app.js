@@ -42,7 +42,7 @@ Bangle.on('pressure', function(e) {
       t = t.toFixed(1);
     else
       t = t.toFixed(0);
-    g.setFont("Vector",50).setFontAlign(0,0).drawString(t, g.getWidth()/2, y);
+    g.setFont("Vector",50).setFontAlign(0,0).drawString((t * M_TO_FT).toFixed(0), g.getWidth()/2, y);
     sea = convertToSeaLevelPressure(e.pressure, value-zero);
     t = sea.toFixed(1) + " " + e.temperature.toFixed(1);
     if (0) {
@@ -52,7 +52,7 @@ Bangle.on('pressure', function(e) {
       print("sea pressure:", sea);
       print("std pressure:", getStandardPressure(value-zero));
     }
-    g.setFont("Vector",25).setFontAlign(-1,0).drawString(t * M_TO_FT,
+    g.setFont("Vector",25).setFontAlign(-1,0).drawString(t,
                                                         10, R.y+R.h - 35);
   }
 });
