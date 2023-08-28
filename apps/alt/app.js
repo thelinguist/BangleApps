@@ -38,11 +38,10 @@ Bangle.on('pressure', function(e) {
     var mid = median.length>>1;
     value = E.sum(median.slice(mid-4,mid+5)) / 9;
     t = value-zero;
+    let fractionDigits = 0
     if ((t > -100) && (t < 1000))
-      t = t.toFixed(1);
-    else
-      t = t.toFixed(0);
-    g.setFont("Vector",50).setFontAlign(0,0).drawString((t * M_TO_FT).toFixed(0), g.getWidth()/2, y);
+      fractionDigits = 1
+    g.setFont("Vector",50).setFontAlign(0,0).drawString((t * M_TO_FT).toFixed(fractionDigits), g.getWidth()/2, y);
     sea = convertToSeaLevelPressure(e.pressure, value-zero);
     t = sea.toFixed(1) + " " + e.temperature.toFixed(1);
     if (0) {
